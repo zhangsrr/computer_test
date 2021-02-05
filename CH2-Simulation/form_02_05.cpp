@@ -1,6 +1,6 @@
 /*
-* µş¿ğ
-* ÊäÈë£º11 B A ±íÊ¾×îÍâ¿ğ±ß³¤»ò¸ß£¬ÖĞĞÄ»¨É«inner£¬×îÍâ¿ğ»¨É«
+* å ç­
+* è¾“å…¥ï¼š11 B A è¡¨ç¤ºæœ€å¤–ç­è¾¹é•¿æˆ–é«˜ï¼Œä¸­å¿ƒèŠ±è‰²innerï¼Œæœ€å¤–ç­èŠ±è‰²
 * 
 */
 
@@ -34,44 +34,44 @@ int main() {
 				cout << outer;
 			}
 			else if (row <= (h+1)/2)
-			{ //ÉÏ×ó²¿·Ö
+			{ //ä¸Šå·¦éƒ¨åˆ†
 				for (col = 1; col < row; col++)
-				{ //Ã¿ĞĞ×ó±ß
+				{ //æ¯è¡Œå·¦è¾¹
 					if (col % 2 == 1)
 						cout << outer;
 					else cout << inner;
 				}
 				for (; col <= h-(row-1); col++)
-				{ //Ã¿ĞĞÖĞ¼ä
+				{ //æ¯è¡Œä¸­é—´
 					if (row % 2 == 1)
 						cout << outer;
 					else cout << inner;
 				}
 				for (; col <= h; col++)
-				{ //Ã¿ĞĞÓÒ±ß
+				{ //æ¯è¡Œå³è¾¹
 					if (col % 2 == 1)
 						cout << outer;
 					else cout << inner;			
 				}
 			}		
 			else
-			{ //ÏÂ°ë²¿·Ö£¬²»º¬ÖĞĞÄ²ã
+			{ //ä¸‹åŠéƒ¨åˆ†ï¼Œä¸å«ä¸­å¿ƒå±‚
 				trow = row - 2*count;
 				count++;
 				for (col = 1; col < trow; col++)
-				{ //Ã¿ĞĞ×ó±ß
+				{ //æ¯è¡Œå·¦è¾¹
 					if (col % 2 == 1)
 						cout << outer;
 					else cout << inner;
 				}
 				for (; col <= h - (trow - 1); col++)
-				{ //Ã¿ĞĞÖĞ¼ä
+				{ //æ¯è¡Œä¸­é—´
 					if (trow % 2 == 1)
 						cout << outer;
 					else cout << inner;
 				}
 				for (; col <= h; col++)
-				{ //Ã¿ĞĞÓÒ±ß
+				{ //æ¯è¡Œå³è¾¹
 					if (col % 2 == 1)
 						cout << outer;
 					else cout << inner;
@@ -80,4 +80,5 @@ int main() {
 			cout << endl;
 		}
 	}
+	return 0;
 }
