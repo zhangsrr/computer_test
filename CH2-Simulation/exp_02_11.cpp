@@ -1,5 +1,5 @@
 /*
-* ×¹ÂäµÄÂìÒÏ
+* å è½çš„èš‚èš
 */
 #include <iostream>
 #include <vector>
@@ -17,38 +17,38 @@ int main() {
 
 		sort(ants.begin(), ants.end());
 		
-		int left = 0, right = 0; //³õÊ¼Ïò×óÏòÓÒ
+		int left = 0, right = 0; //åˆå§‹å‘å·¦å‘å³
 		int center = 0;
 
 		for (int i = 0; i < ants.size(); i++)
-		{ //µÃµ½³õÊ¼¾²Ö¹ÂìÒÏ×ó±ßÇÒÏòÓÒÒÆ¶¯µÄÊýÄ¿leftºÍÔÚÓÒ±ßÇÒÏò×óÒÆ¶¯µÄÊýÄ¿right
+		{ //å¾—åˆ°åˆå§‹é™æ­¢èš‚èšå·¦è¾¹ä¸”å‘å³ç§»åŠ¨çš„æ•°ç›®leftå’Œåœ¨å³è¾¹ä¸”å‘å·¦ç§»åŠ¨çš„æ•°ç›®right
 			if (ants[i][1] == 0)
-				center = i + 1; //µÚcenter¸öÂìÒÏ¾²Ö¹
+				center = i + 1; //ç¬¬centerä¸ªèš‚èšé™æ­¢
 			else if (center == 0 && ants[i][1] == 1)
-			  //×ó±ßÇÒÏòÓÒÒÆ¶¯µÄ left
+			  //å·¦è¾¹ä¸”å‘å³ç§»åŠ¨çš„ left
 				left++;
 			else if (i+1 > center && center != 0 && ants[i][1] == -1)
-			  //ÓÒ±ßÇÒÏò×óÒÆ¶¯µÄ right
+			  //å³è¾¹ä¸”å‘å·¦ç§»åŠ¨çš„ right
 				right++;
 		}
 
 		/*
-		* ÏÈ¼ÙÉèÒ»¸ö¼òµ¥µÄÇé¿ö£¬
-		* 1£©Ö»ÓÐÁ½Ö»ÂìÒÏ£¬Ò»Ö»A¾²Ö¹£¬ÁíÒ»Ö»BÔÚ¾²Ö¹µÄ×ó±ßÇÒÏòÓÒÒÆ¶¯£¬ÄÇÃ´µ±¶þÕßÏà×²Ê±BA
-		* ´ËÊ±BA½»»»ËÙ¶È£¬B¾²Ö¹£¬AÏòÓÒÒÆ¶¯Ö±µ½µôÏÂÈ¥£¬¾­¹ýµÄÊ±¼äÊýÖµÉÏµÈÓÚBµ½±ßÔµµÄ¾àÀë
-		* 2£©ÓÐÈýÖ»ÂìÒÏ£¬ÖÐ¼äA¾²Ö¹£¬A×ó±ßµÄBÏòÓÒÒÆ¶¯£¬CÏò×óÒÆ¶¯£¬ÄÇÃ´AÓë¶þÕß¶¼·¢ÉúÅö×²ºó£¬ÈÔ»á¾²Ö¹£¬²»»áµôÂä
-		* 3£©¶ÔÓÚ2£©ÕâÖÖÇé¿ö£¬¿ÉÒÔÀí½âÎªBC´©¹ýA¼ÌÐøÒÆ¶¯£¬Ò²¾ÍÊÇËµÎÒÃÇ²»ÐèÒª¹ÜÔÚA×ó±ßÇÒÏò×óÒÆ¶¯µÄÂìÒÏ£¬Í¬Àí²»ÐèÒª¹ÜÔÚAÓÒ±ßÇÒÏòÓÒÒÆ¶¯µÄÂìÒÏ
-		* ÒòÎªÕâÁ½ÖÖÇé¿ö¶¼²»»áÓ°ÏìAµÄµôÂä
-		* ÄÇÃ´Ö»ÐèÒªµÃ³öÔÚA×ó±ßÇÒÏòÓÒÒÆ¶¯ Óë ÔÚAÓÒ±ßÇÒÏò×óÒÆ¶¯µÄÂìÒÏ¸öÊý£¬¼Ç×÷leftºÍright
-		* if left == right ²»»áµôÂä
-		* if left < right Ïò×óµôÂä£¬time = ÓÒ±ßÓë×ó±ßµÖÏûºóµÄµÚÒ»¸öÂìÒÏµ½×ø±ê0µÄ¾àÀë
-		* if left > right ÏòÓÒµôÂä£¬time = µÚleft-right¸öÂìÒÏµ½×ó±ß100µÄ¾àÀë
+		* å…ˆå‡è®¾ä¸€ä¸ªç®€å•çš„æƒ…å†µï¼Œ
+		* 1ï¼‰åªæœ‰ä¸¤åªèš‚èšï¼Œä¸€åªAé™æ­¢ï¼Œå¦ä¸€åªBåœ¨é™æ­¢çš„å·¦è¾¹ä¸”å‘å³ç§»åŠ¨ï¼Œé‚£ä¹ˆå½“äºŒè€…ç›¸æ’žæ—¶BA
+		* æ­¤æ—¶BAäº¤æ¢é€Ÿåº¦ï¼ŒBé™æ­¢ï¼ŒAå‘å³ç§»åŠ¨ç›´åˆ°æŽ‰ä¸‹åŽ»ï¼Œç»è¿‡çš„æ—¶é—´æ•°å€¼ä¸Šç­‰äºŽBåˆ°è¾¹ç¼˜çš„è·ç¦»
+		* 2ï¼‰æœ‰ä¸‰åªèš‚èšï¼Œä¸­é—´Aé™æ­¢ï¼ŒAå·¦è¾¹çš„Bå‘å³ç§»åŠ¨ï¼ŒCå‘å·¦ç§»åŠ¨ï¼Œé‚£ä¹ˆAä¸ŽäºŒè€…éƒ½å‘ç”Ÿç¢°æ’žåŽï¼Œä»ä¼šé™æ­¢ï¼Œä¸ä¼šæŽ‰è½
+		* 3ï¼‰å¯¹äºŽ2ï¼‰è¿™ç§æƒ…å†µï¼Œå¯ä»¥ç†è§£ä¸ºBCç©¿è¿‡Aç»§ç»­ç§»åŠ¨ï¼Œä¹Ÿå°±æ˜¯è¯´æˆ‘ä»¬ä¸éœ€è¦ç®¡åœ¨Aå·¦è¾¹ä¸”å‘å·¦ç§»åŠ¨çš„èš‚èšï¼ŒåŒç†ä¸éœ€è¦ç®¡åœ¨Aå³è¾¹ä¸”å‘å³ç§»åŠ¨çš„èš‚èš
+		* å› ä¸ºè¿™ä¸¤ç§æƒ…å†µéƒ½ä¸ä¼šå½±å“Açš„æŽ‰è½
+		* é‚£ä¹ˆåªéœ€è¦å¾—å‡ºåœ¨Aå·¦è¾¹ä¸”å‘å³ç§»åŠ¨ ä¸Ž åœ¨Aå³è¾¹ä¸”å‘å·¦ç§»åŠ¨çš„èš‚èšä¸ªæ•°ï¼Œè®°ä½œleftå’Œright
+		* if left == right ä¸ä¼šæŽ‰è½
+		* if left < right å‘å·¦æŽ‰è½ï¼Œtime = å³è¾¹ä¸Žå·¦è¾¹æŠµæ¶ˆåŽçš„ç¬¬ä¸€ä¸ªèš‚èšåˆ°åæ ‡0çš„è·ç¦»
+		* if left > right å‘å³æŽ‰è½ï¼Œtime = ç¬¬left-rightä¸ªèš‚èšåˆ°å·¦è¾¹100çš„è·ç¦»
 		*/
 		int pos = 0;
 		if (left == right)
 			cout << "Cannot fall!" << endl;
 		else if (left < right) {
-			//´Ó×ó±ßµôÏÂÈ¥
+			//ä»Žå·¦è¾¹æŽ‰ä¸‹åŽ»
 			for (int i = center; i < N; i++)
 			{
 				if (ants[i][1]==-1)
@@ -60,7 +60,7 @@ int main() {
 			}			
 		}
 		else {
-			//´ÓÓÒ±ßµôÏÂÈ¥
+			//ä»Žå³è¾¹æŽ‰ä¸‹åŽ»
 			for (int i = 0; i < center; i++)
 			{
 				if (ants[i][1] == 1)
