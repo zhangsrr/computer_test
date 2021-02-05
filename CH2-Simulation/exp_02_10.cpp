@@ -1,6 +1,6 @@
 /*
-* ·����ӡ����ӡĿ¼���ṹ
-* �ȵõ�����·��(��'\')���ٵ����ָ�洢
+* 路径打印：打印目录树结构
+* 先得到完整路径(含'\')，再单独分割存储
 */
 #include <iostream>
 #include <cstdio>
@@ -22,7 +22,7 @@ int main() {
         {
             cin >> tmp; 
             int pos = 0;
-            //�ָ��ַ���
+            //分割字符串
             for (int j = 0; j < tmp.size(); ++j)
             {
                 if (tmp[j] == '\\') {
@@ -41,7 +41,7 @@ int main() {
             }   
             str[i].resize(pos);
         }
-        //��������
+        //升序排序
         sort(str.begin(), str.end());
 
         for (int i = 0; i < n; i++)
@@ -49,14 +49,14 @@ int main() {
             int pos = 0;
             string space;
             while (i != 0 && pos < str[i].size() && pos < str[i-1].size() && str[i-1][pos] == str[i][pos])
-            { //���������ո����
+            { //控制缩进空格个数
                 space += "  ";
                 pos++;
             }
             for (; pos < str[i].size(); pos++, space += "  ")
                 cout << space << str[i][pos] << endl;
         }
-        cout << endl; //����
+        cout << endl; //空行
     }
     return 0;
 }
