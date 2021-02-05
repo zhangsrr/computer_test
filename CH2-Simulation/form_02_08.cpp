@@ -1,5 +1,5 @@
 /*
-* ¼ÆËãÒ»¸öÈÕÆÚ¼ÓÉÏÈô¸ÉÌìºóÊÇÊ²Ã´ÈÕÆÚ
+* è®¡ç®—ä¸€ä¸ªæ—¥æœŸåŠ ä¸Šè‹¥å¹²å¤©åæ˜¯ä»€ä¹ˆæ—¥æœŸ
 * Input:
 * m yyyy-mm-dd day
 * Output:
@@ -26,11 +26,11 @@ int main() {
 	vector<vector<int>> output(m, vector<int>(3));
 	int year = 0, month = 0, date = 0;
 	int day = 0;
-	//ÊäÈë
+	//è¾“å…¥
 	for (int i = 0; i < m; i++)
 		cin >> input[i][0] >> input[i][1] >> input[i][2] >> input[i][3];
 	
-	//´¦Àí
+	//å¤„ç†
 	for (int i = 0; i < m; i++)
 	{
 		year = input[i][0];
@@ -38,7 +38,7 @@ int main() {
 		date = input[i][2];
 		day = input[i][3];
 		if (day >= mon[isLeap(year)][month - 1] - date)
-		{ //µ÷ÕûÈÕÆÚµ½1ºÅ ·½±ãÔËËã
+		{ //è°ƒæ•´æ—¥æœŸåˆ°1å· æ–¹ä¾¿è¿ç®—
 			day = day - (mon[isLeap(year)][month - 1] - date + 1);
 			date = 1;
 			month++; 
@@ -55,7 +55,7 @@ int main() {
 		while (day > 0) //day > 0
 		{
 			if (date+day <= mon[isLeap(year)][month-1])
-			{ //ÀÛ¼Óºó»¹ÔÚµ±ÔÂ
+			{ //ç´¯åŠ åè¿˜åœ¨å½“æœˆ
 				date += day;
 				break;
 			}
@@ -75,7 +75,7 @@ int main() {
 		output[i][2] = date;
 	}
 
-	//Êä³ö
+	//è¾“å‡º
 	for (int i = 0; i < m; i++)
 	{
 		cout << setw(4) << setfill('0') << output[i][0] << "-";
@@ -84,4 +84,5 @@ int main() {
 		if (i != m - 1)
 			cout << endl;
 	}
+	return 0;
 }
