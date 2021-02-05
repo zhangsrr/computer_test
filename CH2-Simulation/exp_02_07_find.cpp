@@ -47,9 +47,9 @@ int main() {
 
 	while (cin >> day >> mm >> year)
 	{
-		//¹«Ôª1Äê1ÔÂ1ÈÕÎªĞÇÆÚÒ»
+		//å…¬å…ƒ1å¹´1æœˆ1æ—¥ä¸ºæ˜ŸæœŸä¸€
 		daycount = getYearDay(year);
-		int mpos = matchName(mm, Month); //1ÔÂµÄ·µ»ØÖµÎª0
+		int mpos = matchName(mm, Month); //1æœˆçš„è¿”å›å€¼ä¸º0
 		for (int i = 0; i < mpos; i++)
 		{
 			daycount += month[isLeap(year)][i];
@@ -57,4 +57,5 @@ int main() {
 		daycount += day;
 		cout << Week[daycount % 7] << endl;
 	}
+	return 0;
 }
