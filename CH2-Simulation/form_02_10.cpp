@@ -1,15 +1,15 @@
 /*
-* ÊÖ»ú¼üÅÌ, aµÄASCIIÂë´Ó'a'¿ªÊ¼
-* 1£ºabc
-* 2£ºdef
-* 3£ºghi
-* 4£ºjkl
-* 5£ºmno
-* 6£ºpqrs
-* 7£ºtuv
-* 8£ºwxyz
-* keyboardÖ®²î == ×ÖÄ¸Ö®²î
-* °´Ò»´Îtimes+1£¬µÈ´ıtimes+2
+* æ‰‹æœºé”®ç›˜, açš„ASCIIç ä»'a'å¼€å§‹
+* 1ï¼šabc
+* 2ï¼šdef
+* 3ï¼šghi
+* 4ï¼šjkl
+* 5ï¼šmno
+* 6ï¼špqrs
+* 7ï¼štuv
+* 8ï¼šwxyz
+* keyboardä¹‹å·® == å­—æ¯ä¹‹å·®
+* æŒ‰ä¸€æ¬¡times+1ï¼Œç­‰å¾…times+2
 */
 #include <iostream>
 #include <vector>
@@ -23,13 +23,14 @@ int main() {
 		int times = 0;
 		int len = s.length();
 		for (int i = 0; i < s.length(); ++i)
-		{ //µÈ´ıÊ±¼ä
+		{ //ç­‰å¾…æ—¶é—´
 			int ch1 = int(s[i - 1]);
 			int ch2 = int(s[i]);
 			if (i != 0 && ((ch1 - ch2) == (keyboard[ch1 - 'a'] - keyboard[ch2 - 'a'])))
-				times += 2; //ÔÚÍ¬Ò»¸ö¼üÉÏÔòÒªµÈ´ı
+				times += 2; //åœ¨åŒä¸€ä¸ªé”®ä¸Šåˆ™è¦ç­‰å¾…
 			times += keyboard[int(s[i]) - 'a'];
 		}
 		cout << times << endl;
 	}
+	return 0;
 }
