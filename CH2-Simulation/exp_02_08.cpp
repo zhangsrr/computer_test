@@ -1,22 +1,22 @@
 /*
-* ÈÕÆÚÀà
-* Input£º
+* æ—¥æœŸç±»
+* Inputï¼š
 * m yyyy mm dd
-* Output£º
+* Outputï¼š
 * yyyy-mm-dd
 * 
-* Ëã·¨1£º
-* ¼ÆËã³ö¸ø¶¨ÈÕÆÚÎªµ±ÄêµÚ¼¸Ìì£¬
-* if Îª¸ÃÄê×îºóÒ»ÌìÔò¿ÉÖ±½ÓÊä³ö
-* else if Îªµ±ÔÂ×îºóÒ»Ìì Ò²¿ÉÖ±½ÓÊä³ö
-* else dd+1Êä³ö 
+* ç®—æ³•1ï¼š
+* è®¡ç®—å‡ºç»™å®šæ—¥æœŸä¸ºå½“å¹´ç¬¬å‡ å¤©ï¼Œ
+* if ä¸ºè¯¥å¹´æœ€åä¸€å¤©åˆ™å¯ç›´æ¥è¾“å‡º
+* else if ä¸ºå½“æœˆæœ€åä¸€å¤© ä¹Ÿå¯ç›´æ¥è¾“å‡º
+* else dd+1è¾“å‡º 
 * 
-* Ëã·¨2£º
+* ç®—æ³•2ï¼š
 * dd++
-* if dd > µ±ÔÂ¿ÉÄÜµÄ×î´óÌìÊı
+* if dd > å½“æœˆå¯èƒ½çš„æœ€å¤§å¤©æ•°
 * then dd=1, mm++  
 *					if mm>12 
-* 	     			then yyyy++£¬mm=1
+* 	     			then yyyy++ï¼Œmm=1
 */
 #include <iostream>
 #include <vector>
@@ -34,7 +34,7 @@ int getYearDay(int year) {
 	return (isLeap(year) == 1 ? 366 : 365);
 }
 
-int getDayth(int yyyy, int mm, int dd, vector<vector<int>> month) { //¸ÃÈÕÆÚÎª¸ÃÄêµÚ¼¸Ìì
+int getDayth(int yyyy, int mm, int dd, vector<vector<int>> month) { //è¯¥æ—¥æœŸä¸ºè¯¥å¹´ç¬¬å‡ å¤©
 	int countday = 0;
 	int flag = isLeap(yyyy);
 	
@@ -110,4 +110,5 @@ int main() {
 				cout << endl;
 		}
 	}*/
+	return 0;
 }
