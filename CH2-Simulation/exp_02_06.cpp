@@ -1,8 +1,8 @@
 /*
-* ÈÕÆÚ²îÖµ
-* ÇóÁ½¸öÈÕÆÚÖ®¼äµÄÌìÊý£¬Èç¹ûÁ½¸öÈÕÆÚÊÇÁ¬ÐøµÄÎÒÃÇ¹æ¶¨ËûÃÇÖ®¼äµÄÌìÊýÎªÁ½Ìì
-* Ëã·¨£º
-* ¼ÆËã³öµ±Ç°ÈÕÆÚÊÇ¸ÃÄêµÄµÚ¼¸Ìì£¬ÔÙ×÷²î
+* æ—¥æœŸå·®å€¼
+* æ±‚ä¸¤ä¸ªæ—¥æœŸä¹‹é—´çš„å¤©æ•°ï¼Œå¦‚æžœä¸¤ä¸ªæ—¥æœŸæ˜¯è¿žç»­çš„æˆ‘ä»¬è§„å®šä»–ä»¬ä¹‹é—´çš„å¤©æ•°ä¸ºä¸¤å¤©
+* ç®—æ³•ï¼š
+* è®¡ç®—å‡ºå½“å‰æ—¥æœŸæ˜¯è¯¥å¹´çš„ç¬¬å‡ å¤©ï¼Œå†ä½œå·®
 */
 #include <iostream>
 #include <vector>
@@ -31,7 +31,7 @@ int main() {
 	{
 		countDay = 0;
 		if (input[0] > input[1])
-		{ //È·±£ºóÒ»¸öÈÕÆÚ¸ü´ó
+		{ //ç¡®ä¿åŽä¸€ä¸ªæ—¥æœŸæ›´å¤§
 			int temp = input[1];
 			input[1] = input[0];
 			input[0] = temp;
@@ -45,7 +45,7 @@ int main() {
 
 		int dayMinus[2] = { 0 };
 		for (int i = 0; i < 2; i++)
-		{ //µÃ³ö¸ÃÈÕÆÚÊÇ½ñÄêµÄµÚ¼¸Ìì
+		{ //å¾—å‡ºè¯¥æ—¥æœŸæ˜¯ä»Šå¹´çš„ç¬¬å‡ å¤©
 			int flag = isLeap(date[i][0]);
 			for (int j = 0; j < date[i][1] - 1; j++)
 			{
@@ -60,7 +60,7 @@ int main() {
 		{
 			int year = date[0][0];
 			if (year != date[1][0])
-			{ //±ãÓÚ¼ÆËã£¬ÏÈÇó³ö¸ÃÄêÊ£ÓàÌìÊý
+			{ //ä¾¿äºŽè®¡ç®—ï¼Œå…ˆæ±‚å‡ºè¯¥å¹´å‰©ä½™å¤©æ•°
 				countDay += getYearDay(year) - dayMinus[0] + 1;
 				year++;
 			}
