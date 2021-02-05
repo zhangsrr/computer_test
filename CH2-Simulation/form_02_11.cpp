@@ -1,9 +1,9 @@
 /*
-* xxx¶¨ÂÉ
-* ¶ÔÓÚÒ»¸öÊýn£¬
-* Èç¹ûÊÇÅ¼Êý£¬¾Í°Ñn¿³µôÒ»°ë£»
-* Èç¹ûÊÇÆæÊý£¬°Ñn±ä³É 3*n+ 1ºó¿³µôÒ»°ë£¬Ö±µ½¸ÃÊý±äÎª1ÎªÖ¹¡£     
-* Çë¼ÆËãÐèÒª¾­¹ý¼¸²½²ÅÄÜ½«n±äµ½1
+* xxxå®šå¾‹
+* å¯¹äºŽä¸€ä¸ªæ•°nï¼Œ
+* å¦‚æžœæ˜¯å¶æ•°ï¼Œå°±æŠŠnç æŽ‰ä¸€åŠï¼›
+* å¦‚æžœæ˜¯å¥‡æ•°ï¼ŒæŠŠnå˜æˆ 3*n+ 1åŽç æŽ‰ä¸€åŠï¼Œç›´åˆ°è¯¥æ•°å˜ä¸º1ä¸ºæ­¢ã€‚     
+* è¯·è®¡ç®—éœ€è¦ç»è¿‡å‡ æ­¥æ‰èƒ½å°†nå˜åˆ°1
 */
 #include <iostream>
 using namespace std;
@@ -25,4 +25,5 @@ int main() {
 		}
 		cout << times << endl;
 	}
+	return 0;
 }
