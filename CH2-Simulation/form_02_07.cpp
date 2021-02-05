@@ -1,5 +1,5 @@
 /*
- * ´òÓ¡ÈÕÆÚ Äê-ÔÂ-ÈÕ
+ * æ‰“å°æ—¥æœŸ å¹´-æœˆ-æ—¥
  * Input:
  *   year day
  * Output:
@@ -25,16 +25,17 @@ int main() {
 		if (isLeap(year))
 			flag = 1;
 		while (day >= 0 && (day - mon[flag][month]) >= 0)
-		{ //ÏÂÒ»¸öÔÂ»¹ÓĞÌìÊı¿É¼õ
+		{ //ä¸‹ä¸€ä¸ªæœˆè¿˜æœ‰å¤©æ•°å¯å‡
 			day = day - mon[flag][month];
-			if (day == 0) { //Ç¡Îª×îºóÒ»Ìì
+			if (day == 0) { //æ°ä¸ºæœ€åä¸€å¤©
 				day = mon[flag][month];
 				break;
 			}
 			month++;
 		}
 
-		month++; //×ó²à²¹Áã£¬setw()ÎªÏŞÖÆ¿í¶È
+		month++; //å·¦ä¾§è¡¥é›¶ï¼Œsetw()ä¸ºé™åˆ¶å®½åº¦
 		cout << setw(4) << setfill('0') << year << "-" << setw(2) << setfill('0') << month << "-" << setw(2) << setfill('0') << day << endl;
 	}
+	return 0;
 }
