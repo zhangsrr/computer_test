@@ -1,8 +1,8 @@
 /*
 * Grading
-* ÈýÎ»×¨¼ÒÏÈÆÀ·Ö£¬Èç¹ûÈý¸öÈË¶¼²»Ò»ÖÂ£¬ÔòÓÉÉóÅÐ³¤¸ø³ö³É¼¨
-* ×¨¼ÒE1 E2 E3
-* ÉóÅÐ³¤J
+* ä¸‰ä½ä¸“å®¶å…ˆè¯„åˆ†ï¼Œå¦‚æžœä¸‰ä¸ªäººéƒ½ä¸ä¸€è‡´ï¼Œåˆ™ç”±å®¡åˆ¤é•¿ç»™å‡ºæˆç»©
+* ä¸“å®¶E1 E2 E3
+* å®¡åˆ¤é•¿J
 * if abs(E1-E2) <= T then G = (E1+E2)/2
 * else if (E1-E2) > T && (abs(E3-E1)<=T && abs(E3-E2)>T) ||  (abs(E3-E2)<=T && abs(E3-E1)>T)
 *		then G = abs(E3-E1) > abs(E3-E2)? (E3+E2)/2 : (E3+E1)/2;
@@ -33,4 +33,5 @@ int main() {
 		}
 		cout << setiosflags(ios::fixed) << setprecision(1) << G << endl;
 	}
+	return 0;
 }
