@@ -1,4 +1,4 @@
-//Êä³ö½ñÄêµÄµÚ¼¸Ìì
+//è¾“å‡ºä»Šå¹´çš„ç¬¬å‡ å¤©
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -12,7 +12,7 @@ bool isLeap(int year) {
 int getDay(int year, int month, int date, vector<vector<int>> mon) {
 	int day = 0;
 	if (isLeap(year))
-	{ //Èç¹ûÊÇÈòÄê
+	{ //å¦‚æœæ˜¯é—°å¹´
 		for (int i = 0; i < month-1; i++)
 			day += mon[1][i];
 		day += date;
@@ -35,4 +35,5 @@ int main() {
 		cin >> month >> date;
 		cout << getDay(year, month, date, mon) << endl;
 	}
+	return 0;
 }
