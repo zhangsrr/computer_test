@@ -13,9 +13,11 @@
 #include <stack>
 using namespace std;
 
+typedef long long int ll;
+
 int main(){
     int n=0;
-    stack<int> numbers;
+    stack<ll> numbers;
     while (cin >> n)
     {
         int tmp=0;
