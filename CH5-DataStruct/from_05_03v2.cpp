@@ -57,15 +57,26 @@ int main(){
         { //领养
             if (t == 0 && (!dogs.empty() || !cats.empty()))
             { //直接领养
-                if (dogs.front().order < cats.front().order)
-                { //狗先进
-                    getanimal = dogs.front().id;
-                    dogs.pop();
-                }else
-                {
+                if (dogs.empty())
+                { //只剩猫了                    
                     getanimal = cats.front().id;
                     cats.pop();
-                }
+                }else if (cats.empty())
+                { //只剩狗了
+                    getanimal = dogs.front().id;
+                    dogs.pop();                    
+                }else
+                {
+                    if (dogs.front().order < cats.front().order)
+                    { //狗先进
+                        getanimal = dogs.front().id;
+                        dogs.pop();
+                    }else
+                    {
+                        getanimal = cats.front().id;
+                        cats.pop();
+                    }                    
+                }                
             }
             else if (t == 1 && !dogs.empty())
             { //领养狗
@@ -81,10 +92,13 @@ int main(){
                 if (flag == 0)
                 {
                     cout << getanimal;
+                    getanimal = 0;
                     flag = 1;
                 }
-                else
+                else{                    
                     cout << " " << getanimal;
+                    getanimal = 0;
+                }
             }
         }
     }
