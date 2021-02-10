@@ -18,7 +18,7 @@ bool IsPrime(int n){
     if (n <= 1)
         return false;
     int bound = sqrt(n);
-    for (int i = 2; i < bound; i++)
+    for (int i = 2; i <= bound; i++)
     {
         if (n % i == 0)
             return false;
