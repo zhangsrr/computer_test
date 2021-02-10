@@ -40,7 +40,7 @@ int main(){
                 if (IsPrime(i))
                 {
                     data[i] = i; //i为素数，则其倍数为非素数 
-                    for (int j = 2; j <= n/i; j++)
+                    for (int j = i; j <= n/i; j++)
                         data[i*j] = 1;
                 }
             }
