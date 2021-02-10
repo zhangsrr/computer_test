@@ -8,7 +8,8 @@
  * OUTPUT:
  * 输出N的质因数个数
  * 
- * 求质因数的个数 就是不断将N除 可整除的最小质数 * 
+ * 求质因数的个数 就是不断将N除 可整除的最小质数 
+ * N至多只存在一个大于sqrt(N)的质因数
  **/ 
 #include <iostream>
 #include <vector>
