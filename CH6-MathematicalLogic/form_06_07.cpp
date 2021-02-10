@@ -6,10 +6,14 @@
  * 若是素数则输出yes，否则输出no
  **/
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 bool IsPrime(int n){
-    for (int i = 2; i < n; i++)
+    if (n <= 1)
+        return false;
+    
+    for (int i = 2; i <= sqrt(n); i++)
     {
         if (n % i == 0)
             return false;
@@ -22,15 +26,10 @@ int main(){
     int n=0;
     while (cin >> n)
     {
-        if (n == 0 || n == 1 || n < 0){
-            cout << "no" << endl;
-        }else
-        {
-            if (IsPrime(n))
-                cout << "yes" << endl;
-            else
-                cout << "no" << endl;            
-        }
+        if (IsPrime(n))
+            cout << "yes" << endl;
+        else
+            cout << "no" << endl; 
     }
     return 0;
 }
