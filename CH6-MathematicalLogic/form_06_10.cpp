@@ -13,6 +13,21 @@
 #include <iostream>
 using namespace std;
 
+int FastExp(int a, int b, int mod){
+    //求a^b的最后x位 if mod==1000 x=3
+    int ans=1;
+    while (b != 0)
+    {
+        if (b%2 == 1) //b的二进制数当前最后一位为1
+            ans = (ans*a)%mod;
+        b/=2;
+        a*=a;
+        a%=1000;
+    }
+    return ans;
+}
+
+
 int main(){
     /**
      * 因为10000^10000位数过长 且 只要保留最后三位，而最后三位只与A的最后三位以及B有关
@@ -23,12 +38,8 @@ int main(){
     {
         if (A == 0 && B == 0)
             break;
-        int ans=1;
-        while (B--)
-        {
-            ans = (ans*A)%1000;
-        }
-        cout << ans << endl;
+        
+        cout << FastExp(A, B, 1000) << endl;
     }
     return 0;
 }
