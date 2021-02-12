@@ -89,6 +89,7 @@ BigInteger BigInteger::operator=(int x){
     }
     return *this;
 }
+
 BigInteger  BigInteger::operator=(string str){
     memset(digit, 0, sizeof(digit));
     length = str.size();
@@ -98,6 +99,7 @@ BigInteger  BigInteger::operator=(string str){
     }
     return *this;
 }
+
 BigInteger BigInteger::operator=(const BigInteger& b){
     memset(digit, 0, sizeof(digit));
     length = b.length;
@@ -105,6 +107,7 @@ BigInteger BigInteger::operator=(const BigInteger& b){
         digit[i] = b.digit[i];
     return *this;
 }
+
 bool BigInteger::operator<=(const BigInteger& b){
     if (length < b.length)
         return true;
@@ -122,6 +125,7 @@ bool BigInteger::operator<=(const BigInteger& b){
     }
     return true;
 }
+
 bool BigInteger::operator==(const BigInteger& b){
     if (length != b.length)
         return false;
@@ -135,6 +139,7 @@ bool BigInteger::operator==(const BigInteger& b){
     }
     return true;
 }
+
 BigInteger BigInteger::operator+(const BigInteger& b){
     BigInteger answer;
     int carry=0;
@@ -148,6 +153,7 @@ BigInteger BigInteger::operator+(const BigInteger& b){
         answer.digit[answer.length++] = carry;
     return answer;
 }
+
 BigInteger BigInteger::operator-(const BigInteger& b){
     BigInteger answer;
     int carry=0;
@@ -167,6 +173,7 @@ BigInteger BigInteger::operator-(const BigInteger& b){
         answer.length--;
     return answer;
 }
+
 BigInteger BigInteger::operator*(const BigInteger& b){
     BigInteger answer;
     answer.length = length + b.length;
@@ -186,6 +193,7 @@ BigInteger BigInteger::operator*(const BigInteger& b){
         answer.length--;
     return answer;    
 }
+
 BigInteger BigInteger::operator/(const BigInteger& b){
     BigInteger answer;
     answer.length = length;
@@ -209,6 +217,7 @@ BigInteger BigInteger::operator/(const BigInteger& b){
         answer.length--;
     return answer;
 }
+
 BigInteger BigInteger::operator%(const BigInteger& b){
     BigInteger remainder = 0;
     BigInteger temp = b;
