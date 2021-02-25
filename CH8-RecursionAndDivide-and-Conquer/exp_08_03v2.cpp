@@ -28,39 +28,49 @@
  * 3 = 0011 = 2 + 2^0
  * 7 = 0111 = 2^2 + 2 + 2^0
  * 9 = 1001 = 2^3 + 2^0
- * 要求得对应的幂次就要先将每个数转为二进制
+ * 要知道对应的幂次就要先将每个数转为二进制
+ * 
  * 
  **/ 
 #include <iostream>
-#include <vector>
+#include <cmath>
 #include <algorithm>
 using namespace std;
 
-string GetBinaryStr(int n){
-    //将n转换为二进制表示，最后的结果是逆序的
-    string str;
+void present(int n){
+    //求n的2次幂表达式
     if (n == 0)
-        return "0";
-    
-    while (n != 0)
+        cout << "0";
+    else if (n == 1)
+        return;
+    else if (n == 2)    
+        cout << "2";
+    else
     {
-        if (n % 2 == 1) //str += n%2 + '0';
-            str += "1";
-        else
-            str += "0";
-        n/=2;
+        while (n)
+        {
+            int i=0;
+            for (i = 0; i < 15 && pow(2, i) <= n; ++i); //求n的最高次项幂，因为20000的最高项次不超过14
+            int j=i-1;
+            if (j == 1)
+                cout << "2";
+            else
+                cout << "2(";
+            present(j); //幂次超出2的则要继续拆解
+            if (j != 1)
+                cout << ")"; //完善右括号
+            n -= pow(2,j); //减去已展开的部分
+            if (n != 0)
+                cout << "+";
+        }
     }
-    return str;
 }
+
 int main(){
     int n;
     while (cin >> n)
     {
-        string str = GetBinaryStr(n);
-        //1315 = 10100100011
-        //Reverse(1315) = 11000100101
-        
-        
+        present(n);
     }
     return 0;
 }
