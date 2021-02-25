@@ -81,7 +81,7 @@ string GetBinaryStr(int n){
     
     while (n != 0)
     {
-        if (n % 2 == 1)
+        if (n % 2 == 1) //str += n%2 + '0';
             str += "1";
         else
             str += "0";
